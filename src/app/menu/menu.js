@@ -1,10 +1,10 @@
 function navigateTo(page) {
     switch(page) {
         case 'game':
-            window.location.href = 'game.html';
+            window.location.href = '../game/game.html';
             break;
         case 'highscore':
-            window.location.href = 'highscore.html';
+            window.location.href = '../highscore/highscore.html';
             break;
         case 'instruction':
             window.location.href = '../instruction/instruction.html';
