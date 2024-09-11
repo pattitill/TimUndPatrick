@@ -6,8 +6,8 @@ function navigateTo(page) {
         case 'highscore':
             window.location.href = 'highscore.html';
             break;
-        case 'instructions':
-            window.location.href = 'instructions.html';
+        case 'instruction':
+            window.location.href = '../instruction/instruction.html';
             break;
         default:
             console.error('Unbekannte Seite: ' + page);
