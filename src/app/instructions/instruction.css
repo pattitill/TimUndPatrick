@@ -1,0 +1,52 @@
+body.instructions-background {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://imgur.com/5BlRys9.jpg'); /* Imgur link */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.instructions-container {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01);
+    width: 60%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.instructions-container h1, .instructions-container h2 {
+    text-align: center;
+}
+
+.instructions-container p, .instructions-container ol {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.menu-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #0056b3;
+}
+

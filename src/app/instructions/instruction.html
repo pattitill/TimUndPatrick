@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions - Higher or Lower Game</title>
+    <link rel="stylesheet" href="instruction.css">
+</head>
+<body class="instructions-background">
+<div class="instructions-container">
+    <h1>How to Play: Higher or Lower</h1>
+    <p>
+        The "Higher or Lower" game is a simple yet fun guessing game where you compare two items, such as the popularity of websites, the price of products, or any other metrics. Your goal is to guess if the next item has a higher or lower value than the current one.
+    </p>
+    <h2>Instructions:</h2>
+    <ol>
+        <li>You will be shown an item with a certain value (e.g., number of visitors to a website).</li>
+        <li>Click "Higher" if you think the next item has a higher value.</li>
+        <li>Click "Lower" if you think the next item has a lower value.</li>
+        <li>If you guess correctly, you continue to the next round and gain a point.</li>
+        <li>If you guess incorrectly, the game is over, and your score is displayed.</li>
+    </ol>
+    <h2>Goal:</h2>
+    <p>
+        Try to get as many correct guesses in a row as possible and achieve the highest score!
+    </p>
+    <button class="menu-button" onclick="goToMenu()">Back to Menu</button>
+</div>
+
+<script>
+    function goToMenu() {
+        window.location.href = '../menu/menu.html'; // Link to menu page
+    }
+</script>
+</body>
+</html>
+
