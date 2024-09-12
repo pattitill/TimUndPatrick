@@ -1,25 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../central.css">
+  <link rel="stylesheet" href="login.component.css">
+  <title>Login</title>
+</head>
+
+<body>
+
 <div class="background-image">
   <img src="https://imgur.com/MICJbtV.jpg" alt="Background Image" class="background-img">
 
-  <div class="container mx-auto" style="max-width: 400px;">
-    <div class="text-center text-shadow">
-      <h1 class="mt-20 mb-4 text-6xl font-bold text-gray-200">Login</h1>
+  <div class="login-container">
+
+    <div class="text-shadow">
+      <h1 class="mt-20 mb-4 text-6xl font-bold" style="color: #595959">Login</h1>
     </div>
 
-    <div class="text-center mt-10 blurred-background">
+    <div class="mt-10 blurred-background" style="margin-left: 20%; margin-right: 20%">
       <!-- Username field -->
       <div class="form-group">
         <input type="text" id="username" class="form-control-lg border blurred-input" placeholder="Benutzername" required>
       </div>
 
       <!-- Password field -->
-      <div class="form-group mt-4">
+      <div class="form-group" style="margin-top: 8px">
         <input type="password" id="password" class="form-control-lg border blurred-input" placeholder="Passwort" required>
       </div>
 
       <!-- Login and Create Account buttons -->
-      <div class="flex flex-row form-group justify-center items-center mt-6">
-        <button type="button" id="create-account" class="button2" style="margin-left: 10px;">Account erstellen</button>
+      <div class="form-group mt-6">
+        <button type="button" id="create-account" class="button2" style="margin-left: 10px; margin-top: 16px">Account erstellen</button>
         <button type="button" id="login" class="button1" style="margin-left: 10px;">Anmelden</button>
       </div>
 
@@ -28,3 +42,8 @@
     </div>
   </div>
 </div>
+
+<!-- Link the JavaScript file here -->
+<script src="login.component.js"></script>
+</body>
+</html>

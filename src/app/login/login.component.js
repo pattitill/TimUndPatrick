@@ -1,6 +1,6 @@
 // Hardcoded username and password
-const validUsername = 'user123';
-const validPassword = 'password123';
+const validUsername = 'hacker';
+const validPassword = '123';
 
 // Get the elements from the DOM
 const loginButton = document.getElementById('login');
@@ -22,7 +22,7 @@ loginButton.addEventListener('click', function () {
 
         // Redirect to the game page (replace 'game.html' with your game URL if necessary)
         setTimeout(function () {
-            window.location.href = 'game.html'; // Adjust this URL to point to your game page
+            window.location.href = '../menu/menu.html'; // Adjust this URL to point to your game page
         }, 2000);
     } else {
         // Failure: show an error message

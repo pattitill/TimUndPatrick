@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css?family=Handjet');
+
+.form-group {
+    font-family: 'Handjet', sans-serif;
+}
+
+.button1 {
+    padding: 1em 2em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: 500;
+    color: #000;
+    background-color: #23c483;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+.button1:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.button1:active {
+    transform: translateY(-1px);
+}
+
+.button1:hover[disabled] {
+    background-color: #aaaaaa;
+    box-shadow: 0px 15px 20px #aaaaaa;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.button1[disabled] {
+    background-color: #ccc;
+}
+
+
+.button2 {
+    padding: 1em 2em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: 500;
+    color: #000;
+    background-color: #e44b4b;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.button2:hover {
+    background-color: #e44b4b;
+    box-shadow: 0px 15px 20px rgba(236, 36, 57, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.button2:hover[disabled] {
+    background-color: #aaaaaa;
+    box-shadow: 0px 15px 20px #aaaaaa;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.button2:active {
+    transform: translateY(-1px);
+}
