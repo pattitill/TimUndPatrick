@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('https://imgur.com/2RorfFE.jpg'); /* URL des Bildes */
+    background-image: url('https://imgur.com/MPdx7kG.jpg'); /* URL des Bildes */
     background-size: cover; /* Hintergrundbild über die gesamte Seite strecken */
     background-position: center; /* Hintergrundbild zentrieren */
     background-repeat: no-repeat; /* Hintergrundbild nicht wiederholen */
@@ -14,7 +14,7 @@ body {
 
 .menu-container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Weißer, halbtransparenter Hintergrund für die Lesbarkeit */
+    background-color: rgba(255, 255, 255, 0.7); /* Weißer, halbtransparenter Hintergrund für die Lesbarkeit */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
