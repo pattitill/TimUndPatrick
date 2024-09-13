@@ -18,7 +18,8 @@ let score = 0;
 function startGame() {
     score = 0;
     document.getElementById('result-message').classList.add('hidden');
-    document.getElementById('next-round').classList.add('hidden');
+    document.getElementById('restart-button').classList.add('hidden'); // Hide Restart button at the start
+    document.getElementById('game-container').classList.remove('incorrect'); // Remove any incorrect background
     displayCountries();
 }
 
@@ -26,11 +27,10 @@ function displayCountries() {
     const country1 = countries[country1Index];
     const country2 = countries[country2Index];
     document.getElementById('country1-name').innerText = country1.name;
-    document.getElementById('country1-score').innerText = country1.score;
+    document.getElementById('country1-score').innerText = country1.score; // Always show score of Country A
     document.getElementById('country2-name').innerText = country2.name;
     document.getElementById('country2-score').innerText = country2.score;
-    document.getElementById('country1-score').classList.add('hidden');
-    document.getElementById('country2-score').classList.add('hidden');
+    document.getElementById('country2-score').classList.add('hidden'); // Hide score of Country B
 }
 
 function makeGuess(selectedCountry) {
@@ -38,19 +38,20 @@ function makeGuess(selectedCountry) {
     const country2 = countries[country2Index];
     const correctCountry = country1.score > country2.score ? 'country1' : 'country2';
 
-    document.getElementById('country1-score').classList.remove('hidden');
-    document.getElementById('country2-score').classList.remove('hidden');
+    document.getElementById('country2-score').classList.remove('hidden'); // Reveal Country B's score after guess
 
     if (selectedCountry === correctCountry) {
         score++;
         document.getElementById('result-message').innerText = 'Correct! Your score is: ' + score;
+        document.getElementById('result-message').classList.remove('hidden');
+        setTimeout(nextRound, 1000); // Automatically go to next round after 1 second
     } else {
         document.getElementById('result-message').innerText = 'Wrong! Game Over. Your score was: ' + score;
+        document.getElementById('result-message').classList.remove('hidden');
+        document.getElementById('game-container').classList.add('incorrect'); // Add red background
         disableButtons();
+        document.getElementById('restart-button').classList.remove('hidden'); // Show Restart button
     }
-
-    document.getElementById('result-message').classList.remove('hidden');
-    document.getElementById('next-round').classList.remove('hidden');
 }
 
 function disableButtons() {
@@ -69,7 +70,6 @@ function nextRound() {
         return;
     }
 
-    document.getElementById('next-round').classList.add('hidden');
     document.querySelectorAll('.game-button').forEach(button => {
         button.disabled = false;
     });
@@ -77,8 +77,12 @@ function nextRound() {
     displayCountries();
 }
 
+function restartGame() {
+    window.location.href = 'game.html'; // Go back to the menu
+}
+
 function goToMenu() {
-    window.location.href = '../menu/menu.html'; // Replace 'index.html' with your actual menu page
+    window.location.href = '../menu/menu.html'; // Go back to the menu
 }
 
 window.onload = startGame;

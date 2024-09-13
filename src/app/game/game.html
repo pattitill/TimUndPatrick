@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="game.css">
 </head>
 <body>
-<div class="game-container">
+<div class="game-container" id="game-container">
     <h1>Higher or Lower: Freedom of Speech</h1>
     <div id="country-comparison">
         <div class="country" id="country1">
             <h2 id="country1-name">Country A</h2>
-            <p>Freedom Score: <span id="country1-score">0</span></p>
+            <p>Freedom Score: <span id="country1-score">0</span></p> <!-- Always Visible -->
         </div>
-        <!-- Correct VS Image Position -->
         <img id="vs-sign" src="https://imgur.com/uPHIezj.jpg" alt="VS Sign">
         <div class="country" id="country2">
             <h2 id="country2-name">Country B</h2>
-            <p>Freedom Score: <span id="country2-score">0</span></p>
+            <p>Freedom Score: <span id="country2-score">0</span></p> <!-- Hidden until guess -->
         </div>
     </div>
     <div class="buttons">
@@ -26,11 +25,19 @@
         <button class="game-button" onclick="makeGuess('country2')">Country B</button>
     </div>
     <p id="result-message" class="hidden"></p>
-    <button id="next-round" class="game-button hidden" onclick="nextRound()">Next Round</button>
+    <button id="restart-button" class="menu-button hidden" onclick="restartGame()">Restart</button> <!-- Hidden Restart Button -->
     <button class="menu-button" onclick="goToMenu()">Back to Menu</button>
 </div>
 
+<script src="index.js"></script>
 <script src="game.js"></script>
 </body>
 </html>
+
+
+
+
+<!-- https://imgur.com/uPHIezj.jpg -->
+
+
 
