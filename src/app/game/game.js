@@ -1,18 +1,5 @@
-const countries = [
-    { name: 'Norway', score: 99 },
-    { name: 'Sweden', score: 98 },
-    { name: 'Finland', score: 97 },
-    { name: 'Denmark', score: 96 },
-    { name: 'Netherlands', score: 95 },
-    { name: 'Canada', score: 94 },
-    { name: 'New Zealand', score: 93 },
-    { name: 'Jamaica', score: 92 },
-    { name: 'Costa Rica', score: 91 },
-    { name: 'Switzerland', score: 90 }
-];
 
-let country1Index = 0;
-let country2Index = 1;
+let country1Index, country2Index;
 let score = 0;
 
 function startGame() {
@@ -20,7 +7,17 @@ function startGame() {
     document.getElementById('result-message').classList.add('hidden');
     document.getElementById('restart-button').classList.add('hidden'); // Hide Restart button at the start
     document.getElementById('game-container').classList.remove('incorrect'); // Remove any incorrect background
+    randomizeCountries(); // Randomize starting countries
     displayCountries();
+}
+
+function randomizeCountries() {
+    // Shuffle the countries array
+    const shuffledCountries = countries.sort(() => 0.5 - Math.random());
+
+    // Get random indexes for the first two countries
+    country1Index = 0; // Always use the first country in the shuffled array
+    country2Index = 1; // Always use the second country in the shuffled array
 }
 
 function displayCountries() {
