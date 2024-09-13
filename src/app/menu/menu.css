@@ -12,6 +12,11 @@ body {
     height: 100vh;
 }
 
+h2 {
+    font-weight: bolder;
+}
+
+
 .menu-container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7); /* Weißer, halbtransparenter Hintergrund für die Lesbarkeit */

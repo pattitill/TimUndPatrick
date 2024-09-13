@@ -1,4 +1,15 @@
-
+let currentUser = 'void';
+function getCurrentUser() {
+    // currentUser wird ausgelesen
+    if(localStorage.getItem('currentUser')) {
+        currentUser = (localStorage.getItem('currentUser'));
+        console.log(`currentUser: ${currentUser}`);
+    }
+    else {
+        console.log('no currentUser');
+    }
+}
+getCurrentUser();
 let country1Index, country2Index;
 let score = 0;
 
@@ -50,6 +61,10 @@ function makeGuess(selectedCountry) {
         document.getElementById('game-container').classList.add('incorrect'); // Add red background
         disableButtons();
         document.getElementById('restart-button').classList.remove('hidden'); // Show Restart button
+        if (localStorage.getItem(currentUser)===undefined || localStorage.getItem(currentUser)<score) {
+            localStorage.setItem(currentUser, score);
+            console.log('score ueberschrieben:'+score);
+        }
     }
 }
 

@@ -22,6 +22,7 @@ loginButton.addEventListener('click', function () {
 
         // weiterleitung zur menu page mit 1 sekunde wartezeit
         setTimeout(function () {
+            loginUser(enteredUsername);
             window.location.href = '../menu/menu.html';
         }, 1000);
     } else {
@@ -42,14 +43,16 @@ function toggleLoginButton() {
 
 function loginUser(username) {
     // user wird in lcoal storage geparkt
-    localStorage.setItem('loggedInUser', username);
+    localStorage.setItem('currentUser', username);
 
     // user wird in konsole geloggt
-    console.log(`${username} is now logged in!`);
+    console.log(`${username} eingeloggt`);
 }
 
 usernameInput.addEventListener('input', toggleLoginButton);
 passwordInput.addEventListener('input', toggleLoginButton);
 
-// Initially disable the login button
+// login button deaktivieren und storage raeumen
+localStorage.clear();
+console.log('localStorage geleert');
 toggleLoginButton();
