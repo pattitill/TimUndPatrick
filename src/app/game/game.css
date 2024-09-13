@@ -23,8 +23,19 @@ body {
 
 /* Style for incorrect guess */
 .incorrect {
-    background-color: red !important; /* Red background when the guess is incorrect */
+    background-color: rgba(180, 0, 0, 0.5); /* Red background when the guess is incorrect */
 }
+
+/* Style for correct guess */
+.correct {
+    background-color: rgba(0, 180, 0, 0.5); /* Red background when the guess is incorrect */
+}
+
+/* Style for default */
+.default {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 
 #country-comparison {
     display: flex;

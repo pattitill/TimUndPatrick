@@ -41,10 +41,12 @@ function makeGuess(selectedCountry) {
         score++;
         document.getElementById('result-message').innerText = 'Correct! Your score is: ' + score;
         document.getElementById('result-message').classList.remove('hidden');
-        setTimeout(nextRound, 1000); // Automatically go to next round after 1 second
+        document.getElementById('game-container').classList.add('correct'); // Add green background
+        setTimeout(nextRound, 2000); // Automatically go to next round after 2 second
     } else {
         document.getElementById('result-message').innerText = 'Wrong! Game Over. Your score was: ' + score;
         document.getElementById('result-message').classList.remove('hidden');
+        document.getElementById('game-container').classList.remove('correct'); // Add red background
         document.getElementById('game-container').classList.add('incorrect'); // Add red background
         disableButtons();
         document.getElementById('restart-button').classList.remove('hidden'); // Show Restart button
