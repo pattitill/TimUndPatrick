@@ -53,12 +53,14 @@ function makeGuess(selectedCountry) {
         document.getElementById('result-message').innerText = 'Correct! Your score is: ' + score;
         document.getElementById('result-message').classList.remove('hidden');
         document.getElementById('game-container').classList.add('correct'); // Add green background
-        setTimeout(nextRound, 2000); // Automatically go to next round after 2 second
+        setTimeout(nextRound, 2000); // Automatically go to next round after 2 seconds
     } else {
         document.getElementById('result-message').innerText = 'Wrong! Game Over. Your score was: ' + score;
         document.getElementById('result-message').classList.remove('hidden');
-        document.getElementById('game-container').classList.remove('correct'); // Add red background
+        document.getElementById('game-container').classList.remove('correct'); // Remove correct background
         document.getElementById('game-container').classList.add('incorrect'); // Add red background
+
+        hideButtons(); // Hide buttons when the guess is wrong
         disableButtons();
         document.getElementById('restart-button').classList.remove('hidden'); // Show Restart button
         if (localStorage.getItem(currentUser)===undefined || localStorage.getItem(currentUser)<score) {
@@ -67,6 +69,14 @@ function makeGuess(selectedCountry) {
         }
     }
 }
+
+// Function to hide buttons
+function hideButtons() {
+    document.querySelectorAll('.game-button').forEach(button => {
+        button.classList.add('hidden'); // Add hidden class to hide buttons
+    });
+}
+
 
 function disableButtons() {
     document.querySelectorAll('.game-button').forEach(button => {
