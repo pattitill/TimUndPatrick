@@ -34,11 +34,17 @@ function randomizeCountries() {
 function displayCountries() {
     const country1 = countries[country1Index];
     const country2 = countries[country2Index];
+
+    // Update the country names
     document.getElementById('country1-name').innerText = country1.name;
     document.getElementById('country1-score').innerText = country1.score; // Always show score of Country A
     document.getElementById('country2-name').innerText = country2.name;
     document.getElementById('country2-score').innerText = country2.score;
     document.getElementById('country2-score').classList.add('hidden'); // Hide score of Country B
+
+    // Update the button text to display the country names
+    document.querySelector('.game-button.country1').innerHTML = ` ${country1.name} <br>has a higher freedom score`;
+    document.querySelector('.game-button.country2').innerHTML = ` ${country2.name} <br>has a higher freedom score`;
 }
 
 function makeGuess(selectedCountry) {
