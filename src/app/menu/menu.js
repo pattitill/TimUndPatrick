@@ -11,6 +11,12 @@ function navigateTo(page) {
         case 'instruction':
             window.location.href = '../instruction/instruction.html';
             break;
+        case 'trivia':
+            window.location.href = '../trivia/trivia.html';
+            break;
+        case 'sources':
+            window.location.href = '../quellen/quellen.html';
+            break;
         default:
             console.error('Unbekannte Seite: ' + page);
     }

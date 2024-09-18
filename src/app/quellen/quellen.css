@@ -1,0 +1,70 @@
+body.sources-background {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://imgur.com/kilzWVO.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sources-container {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.sources-container h1 {
+    text-align: center;
+}
+
+.sources-container p, .sources-container li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.sources-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sources-list li {
+    margin: 20px 0;
+}
+
+.sources-list a {
+    font-weight: bold;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.sources-list a:hover {
+    text-decoration: underline;
+}
+
+.menu-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #0056b3;
+}

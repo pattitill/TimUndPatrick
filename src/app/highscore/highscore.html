@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard - Higher or Lower Game</title>
+    <link rel="stylesheet" href="highscore.css">
+</head>
+<body class="scoreboard-background">
+<div class="scoreboard-container">
+    <h1>Scoreboard</h1>
+    <ul id="score-list">
+        <!-- The scores will be dynamically populated here -->
+    </ul>
+    <button class="menu-button" onclick="goToMenu()">Back to Menu</button>
+</div>
+
+<script>
+    // Function to get the player's score from localStorage
+    function getPlayerScore() {
+        const playerScore = localStorage.getItem("hacker");
+        return playerScore ? { name: "Hacker", score: parseInt(playerScore) } : null;
+    }
+
+    // Hardcoded scores
+    const scores = [
+        { name: "Tim", score: 7 },
+        { name: "Deniz", score: 11 }
+    ];
+
+    // Add the player's score if it exists
+    const playerScore = getPlayerScore();
+    if (playerScore) {
+        scores.push(playerScore);
+    }
+
+    // Sort the scores by score value in descending order
+    scores.sort((a, b) => b.score - a.score);
+
+    // Populate the scoreboard dynamically
+    const scoreList = document.getElementById("score-list");
+    scores.forEach(score => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${score.name}: ${score.score}`;
+        scoreList.appendChild(listItem);
+    });
+
+    // Function to navigate back to the menu
+    function goToMenu() {
+        window.location.href = '../menu/menu.html'; // Link to menu page
+    }
+</script>
+</body>
+</html>
