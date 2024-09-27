@@ -14,7 +14,7 @@ body.scoreboard-background {
 
 .scoreboard-container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.7); /* Same semi-translucent background */
+    background-color: rgba(255, 255, 255, 0.7); /*gleicher semi-translucent hintergrund*/
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

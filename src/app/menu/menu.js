@@ -1,4 +1,4 @@
-let currentUser = 'void';
+let currentUser = 'NIEMAND';
 
 function navigateTo(page) {
     switch(page) {
@@ -16,6 +16,9 @@ function navigateTo(page) {
             break;
         case 'sources':
             window.location.href = '../quellen/quellen.html';
+            break;
+        case 'login':
+            window.location.href = '../login/login.component.html';
             break;
         default:
             console.error('Unbekannte Seite: ' + page);

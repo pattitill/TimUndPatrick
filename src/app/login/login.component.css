@@ -18,20 +18,20 @@
 }
 
 .blurred-background {
-  background: rgba(255, 255, 255, 0.6); /* Halbtransparenter weißer Hintergrund */
-  backdrop-filter: blur(5px); /* Hintergrundbild verschwommen */
-  border-radius: 10px; /* Abgerundete Ecken, optional */
-  padding: 20px; /* Innenabstand */
+  background: rgba(255, 255, 255, 0.6); /*halbtransparenter weißer hintergrund*/
+  backdrop-filter: blur(5px); /*hintergrundbild verschwommen*/
+  border-radius: 10px; /*abgerundete ecken optional*/
+  padding: 20px; /*innenabstand*/
 }
 
 .blurred-input {
-  background: rgba(255, 255, 255, 0.6); /* Halbtransparenter weißer Hintergrund für Eingabefelder */
-  backdrop-filter: blur(5px); /* Hintergrundbild leicht verschwommen */
-  border: none; /* Rand der Eingabefelder entfernen */
-  padding: 10px; /* Innenabstand der Eingabefelder */
-  border-radius: 5px; /* Abgerundete Ecken für Eingabefelder */
-  width: 100%; /* Eingabefelder auf volle Breite setzen */
-  box-sizing: border-box; /* Berücksichtigt Innenabstand und Rand in der Gesamtbreite */
+  background: rgba(255, 255, 255, 0.6); /*halbtransparenter weißer hintergrund für eingabefelder*/
+  backdrop-filter: blur(5px); /*hintergrundbild leicht verschwommen*/
+  border: none; /*rand der eingabefelder entfernen*/
+  padding: 10px; /*innenabstand der eingabefelder*/
+  border-radius: 5px; /*abgerundete ecken für eingabefelder*/
+  width: 100%; /*eingabefelder auf volle breite setzen*/
+  box-sizing: border-box; /*berücksichtigt innenabstand und rand in der gesamtbreite*/
 }
 
 .form-group {

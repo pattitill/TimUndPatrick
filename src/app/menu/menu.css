@@ -43,3 +43,9 @@ h2 {
     background-color: #0056b3;
 }
 
+.logout-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+

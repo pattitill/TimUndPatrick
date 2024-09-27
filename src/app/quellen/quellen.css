@@ -2,7 +2,7 @@ body.sources-background {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('https://imgur.com/kilzWVO.jpg'); /* Background image */
+    background-image: url('https://imgur.com/tCBx1pN.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@ body.sources-background {
 
 .sources-container {
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -43,7 +43,7 @@ body.sources-background {
 
 .sources-list a {
     font-weight: bold;
-    color: #007BFF;
+    color: mediumpurple;
     text-decoration: none;
 }
 

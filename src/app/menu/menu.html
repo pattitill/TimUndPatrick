@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="../../central.css">
 </head>
 <body>
 <div class="menu-container">
@@ -16,7 +17,13 @@
     <button class="menu-button" onclick="navigateTo('trivia')">Trivia</button>
     <button class="menu-button" onclick="navigateTo('sources')">Sources</button>
 </div>
+<button class="button2 logout-button" onclick="logout(), navigateTo('login')">Logout</button>
 
 <script src="menu.js"></script>
+<script>
+    function logout() {
+        localStorage.clear(); // Clear all local storage
+    }
+</script>
 </body>
 </html>

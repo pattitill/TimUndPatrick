@@ -1,10 +1,12 @@
 
+/*font import von google fonts, funktioniert noch nicht*/
 @import url('https://fonts.googleapis.com/css?family=Handjet');
 
 .form-group {
     font-family: 'Handjet', sans-serif;
 }
 
+/*button1 und button2 (green and red) mit transformation effekt*/
 .button1 {
     padding: 1em 2em;
     font-size: 12px;

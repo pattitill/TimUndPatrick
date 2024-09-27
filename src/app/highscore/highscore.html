@@ -10,34 +10,34 @@
 <div class="scoreboard-container">
     <h1>Scoreboard</h1>
     <ul id="score-list">
-        <!-- The scores will be dynamically populated here -->
+        <!--dynamische score list-->
     </ul>
     <button class="menu-button" onclick="goToMenu()">Back to Menu</button>
 </div>
 
 <script>
-    // Function to get the player's score from localStorage
+    //playerscore aus dem local storage ziehen
     function getPlayerScore() {
         const playerScore = localStorage.getItem("hacker");
         return playerScore ? { name: "Hacker", score: parseInt(playerScore) } : null;
     }
 
-    // Hardcoded scores
+    //hardcoded scores
     const scores = [
         { name: "Tim", score: 7 },
         { name: "Deniz", score: 11 }
     ];
 
-    // Add the player's score if it exists
+    //wenn ein score fuer player existiert wird dieser hinzugefuegt
     const playerScore = getPlayerScore();
     if (playerScore) {
         scores.push(playerScore);
     }
 
-    // Sort the scores by score value in descending order
+    //sortiert die scores in aufsteigender reihenfolge
     scores.sort((a, b) => b.score - a.score);
 
-    // Populate the scoreboard dynamically
+    //das scoreboard wird dynamisch erstellt
     const scoreList = document.getElementById("score-list");
     scores.forEach(score => {
         const listItem = document.createElement("li");
@@ -45,7 +45,7 @@
         scoreList.appendChild(listItem);
     });
 
-    // Function to navigate back to the menu
+    //navigation zum menu
     function goToMenu() {
         window.location.href = '../menu/menu.html'; // Link to menu page
     }
