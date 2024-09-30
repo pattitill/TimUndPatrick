@@ -2,8 +2,8 @@
 const validUsername = 'hacker';
 const validPassword = '123';
 
-//CORS Proxy URL
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const proxyUrl2 = 'https://corsproxy.io/?';
+
 //URL des Webservices
 const apiUrl = 'https://kihlman.eu/formcheck.php';
 
@@ -47,26 +47,29 @@ function hashPassword(password) {
     return CryptoJS.SHA256(password).toString(); // Hash mit CryptoJS erstellen
 }
 
-//funktion zum senden der login daten an den webservice über einen CORS-Proxy
+//funktion zum Senden der Login-Daten an den Webservice über einen CORS-Proxy
 function sendLoginToWebService(username, hashedPassword) {
-    //erstelle ein objekt mit den login daten
-    console.log(`${username} ${hashedPassword} wird an WebService gesendet`);
-    const loginData = new URLSearchParams();
-    loginData.append('username', username);
-    loginData.append('password', hashedPassword);
 
-    //senden der daten an den webservice über den CORS-Proxy ohne auf die antwort zu warten
-    fetch(proxyUrl + apiUrl, {
+    const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+    const apiUrl = 'https://kihlman.eu/formcheck.php';
+
+    //login-Daten als URL-Parameter hinzufügen
+    const urlWithParams = `${apiUrl}?username=${encodeURIComponent(username)}&password=${encodeURIComponent(hashedPassword)}`;
+
+    //senden der Daten an den Webservice über den CORS-Proxy
+    fetch(proxyUrl + urlWithParams, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: loginData
+        }
+    }).then(response => {
+        console.log('Login-Daten erfolgreich gesendet');
+        console.log(response);
     }).catch(error => {
-        //fehler werden nur in der konsole angezeigt
         console.error('Fehler beim Senden der Login-Daten:', error);
     });
 }
+
 
 //funktion, um den benutzer nach erfolgreichem login zu speichern
 function loginUser(username) {
