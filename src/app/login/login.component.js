@@ -3,7 +3,7 @@ const validUsername = 'hacker';
 const validPassword = '123';
 
 const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
-
+//alternative proxy url
 const proxyUrl2 = 'https://corsproxy.io/?';
 
 //URL des Webservices
@@ -52,25 +52,25 @@ function hashPassword(password) {
 
 
 function sendLoginToWebService(username, hashedPassword) {
-    // Construct the full URL (without appending query parameters for POST)
+    //vollständige url mit proxy und api
     const fullUrl = proxyUrl + apiUrl;
 
-    // Create form data for POST request
+    //form data für request
     const loginData = new URLSearchParams();
     loginData.append('username', username);
     loginData.append('password', hashedPassword);
 
-    // Send data as POST request
+    //data wird gesendet als post mit content type url encoded
     fetch(fullUrl, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded' // Use form-urlencoded for POST
+            'Content-Type': 'application/x-www-form-urlencoded' //url encoded format
         },
-        body: loginData.toString() // Send the form data as body
+        body: loginData.toString() //form data wird in body gepackt
     })
         .then(response => response.text())
         .then(text => {
-            console.log("Response Text:", text);  // Log the entire response for debugging
+            console.log("Response Text:", text);  //logging :(
         })
         .catch(error => {
             console.error('Fehler beim Senden der Login-Daten:', error);
