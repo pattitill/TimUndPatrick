@@ -27,7 +27,7 @@ loginButton.addEventListener('click', function () {
         messageDisplay.textContent = 'Login erfolgreich! Du wirst weitergeleitet...';
         messageDisplay.style.color = 'green';
 
-        //weiterleitung zur menu-seite nach 1 sekunde
+        //weiterleitung zur menu-seite nach 1 sekunde wegen console log
         setTimeout(function () {
             loginUser(enteredUsername);
             window.location.href = '../menu/menu.html';
