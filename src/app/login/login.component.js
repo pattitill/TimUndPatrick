@@ -2,6 +2,8 @@
 const validUsername = 'hacker';
 const validPassword = '123';
 
+const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+
 const proxyUrl2 = 'https://corsproxy.io/?';
 
 //URL des Webservices
@@ -47,28 +49,34 @@ function hashPassword(password) {
     return CryptoJS.SHA256(password).toString(); // Hash mit CryptoJS erstellen
 }
 
-//funktion zum Senden der Login-Daten an den Webservice über einen CORS-Proxy
+
+
 function sendLoginToWebService(username, hashedPassword) {
+    // Construct the full URL (without appending query parameters for POST)
+    const fullUrl = proxyUrl + apiUrl;
 
-    const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
-    const apiUrl = 'https://kihlman.eu/formcheck.php';
+    // Create form data for POST request
+    const loginData = new URLSearchParams();
+    loginData.append('username', username);
+    loginData.append('password', hashedPassword);
 
-    //login-Daten als URL-Parameter hinzufügen
-    const urlWithParams = `${apiUrl}?username=${encodeURIComponent(username)}&password=${encodeURIComponent(hashedPassword)}`;
-
-    //senden der Daten an den Webservice über den CORS-Proxy
-    fetch(proxyUrl + urlWithParams, {
+    // Send data as POST request
+    fetch(fullUrl, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-    }).then(response => {
-        console.log('Login-Daten erfolgreich gesendet');
-        console.log(response);
-    }).catch(error => {
-        console.error('Fehler beim Senden der Login-Daten:', error);
-    });
+            'Content-Type': 'application/x-www-form-urlencoded' // Use form-urlencoded for POST
+        },
+        body: loginData.toString() // Send the form data as body
+    })
+        .then(response => response.text())
+        .then(text => {
+            console.log("Response Text:", text);  // Log the entire response for debugging
+        })
+        .catch(error => {
+            console.error('Fehler beim Senden der Login-Daten:', error);
+        });
 }
+
 
 
 //funktion, um den benutzer nach erfolgreichem login zu speichern
