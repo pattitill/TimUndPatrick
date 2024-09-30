@@ -15,7 +15,7 @@ let score = 0;
 
 function startGame() {
     score = 0;
-    document.getElementById('result-message').classList.add('hidden');
+    document.getElementById('result-message').classList.add('hidden'); // Hide Result message at the start
     document.getElementById('restart-button').classList.add('hidden'); // Hide Restart button at the start
     document.getElementById('game-container').classList.remove('incorrect'); // Remove any incorrect background
     randomizeCountries(); // Randomize starting countries
@@ -35,11 +35,11 @@ function displayCountries() {
     const country1 = countries[country1Index];
     const country2 = countries[country2Index];
 
-    // Update the country names
-    document.getElementById('country1-name').innerText = country1.name;
+    // Update country names
+    document.getElementById('country1-name').innerText = country1.name; // Always show name of Country A
     document.getElementById('country1-score').innerText = country1.score; // Always show score of Country A
-    document.getElementById('country2-name').innerText = country2.name;
-    document.getElementById('country2-score').innerText = country2.score;
+    document.getElementById('country2-name').innerText = country2.name; // Always show name of Country B
+    document.getElementById('country2-score').innerText = country2.score; // Score of Country B
     document.getElementById('country2-score').classList.add('hidden'); // Hide score of Country B
 
     // Update the button text to display the country names
@@ -69,8 +69,8 @@ function makeGuess(selectedCountry) {
         hideButtons(); // Hide buttons when the guess is wrong
         disableButtons();
         document.getElementById('restart-button').classList.remove('hidden'); // Show Restart button
-        if (localStorage.getItem(currentUser)===undefined || localStorage.getItem(currentUser)<score) {
-            localStorage.setItem(currentUser, score);
+        if (localStorage.getItem(currentUser)===undefined || localStorage.getItem(currentUser)<score) {   // Überprüft, ob der User einen Highscore hat und wenn ja ob er kleiner oder größer ist als der neue
+            localStorage.setItem(currentUser, score); //überschreibt den aktuellen Highscore des Users mit dem neuen
             console.log('score ueberschrieben:'+score);
         }
     }
@@ -83,7 +83,7 @@ function hideButtons() {
     });
 }
 
-
+//Function to disable Buttons
 function disableButtons() {
     document.querySelectorAll('.game-button').forEach(button => {
         button.disabled = true;
@@ -93,12 +93,6 @@ function disableButtons() {
 function nextRound() {
     country1Index = country2Index;
     country2Index = (country2Index + 1) % countries.length;
-
-    if (country1Index === country2Index) {
-        document.getElementById('result-message').innerText = 'You have reached the end! Final score: ' + score;
-        disableButtons();
-        return;
-    }
 
     document.querySelectorAll('.game-button').forEach(button => {
         button.disabled = false;
